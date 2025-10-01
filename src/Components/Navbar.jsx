@@ -8,7 +8,7 @@ function Navbar(){
                      <li className="hover:text-gray-400 active:text-gray-200">Home</li>
                 </Link>
 
-                <Link>
+                <Link to="/pastquestions">
                      <li className="hover:text-gray-400 active:text-gray-200">Past Questions</li>
                 </Link>
 

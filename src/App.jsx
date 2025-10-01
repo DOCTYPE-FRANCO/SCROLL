@@ -2,6 +2,7 @@ import React from "react"
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header"
 import Homepage from "./Components/Homepage";
+import PQ from "./Components/PQ"
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <div className="relative z-10">
           <Routes>
             <Route path="/" element={<Homepage />}/>
+            <Route path="/pastquestions" element={<PQ />}/>
           </Routes>
         </div>
       </div>
