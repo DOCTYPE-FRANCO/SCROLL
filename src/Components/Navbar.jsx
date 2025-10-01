@@ -5,15 +5,15 @@ function Navbar(){
         <div className="pr-32">
             <ul className="flex flex-row text-blue-950 gap-10 font-bold ">
                 <Link to="/">
-                     <li>Home</li>
+                     <li className="hover:text-gray-400 active:text-gray-200">Home</li>
                 </Link>
 
                 <Link>
-                     <li>Past Questions</li>
+                     <li className="hover:text-gray-400 active:text-gray-200">Past Questions</li>
                 </Link>
 
                 <Link>
-                     <li>LOGIN/SIGNUP</li>
+                     <li className="hover:text-gray-400 active:text-gray-200">LOGIN/SIGNUP</li>
                 </Link>
                 
             </ul>

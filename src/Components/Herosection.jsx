@@ -1,16 +1,20 @@
 import React from "react";
+import Search from "../assets/Search.svg"
 
 function Herosection(){
     return(
-        <div className="">
+        <div className="mb-10">
             <h1 className="text-blue-950 font-bold text-center text-5xl mb-6">Search for Past Questions</h1>
 
-            <div className="flex justify-center items-center mb-5">
+            <div className="flex justify-center items-center mb-5 gap-2" >
                 <input 
                     type="text"
                     className="flex font-bold justify-center items-center border shadow-2xl rounded-xl border-blue-950 md:w-[550px] md:h-[50px] text-center"
                     placeholder="Search for Past Questions by Course Code, Year, or Keyword"
                 />
+                <button className="border border-blue-950  rounded-xl p-2">
+                    <img src={Search} className="w-[30px]" />
+                </button>
             </div>
 
             <div className="flex flex-row justify-center items-center gap-10">
