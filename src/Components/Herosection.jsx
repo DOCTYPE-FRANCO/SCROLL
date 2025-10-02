@@ -3,8 +3,8 @@ import Search from "../assets/Search.svg"
 
 function Herosection(){
     return(
-        <div className="mb-10">
-            <h1 className="text-blue-950 font-bold text-center text-5xl mb-6">Search for Past Questions</h1>
+        <div className="flex flex-col justify-center items-center mb-10">
+            <h1 className="flex justify-center items-center text-blue-500 font-bold text-center text-4xl md:text-5xl mb-6 max-w-[300px]">Search for Past Questions</h1>
 
             <div className="flex justify-center items-center mb-5 gap-2" >
                 <input 
