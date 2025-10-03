@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "../assets/Search.svg"
+import Search from "../assets/search.svg"
 
 function Herosection(){
     return(
