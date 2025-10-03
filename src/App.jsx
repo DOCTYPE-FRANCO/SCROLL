@@ -6,7 +6,7 @@ import PQ from "./Components/PQ"
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-white relative">
+    <div className="flex flex-col justify-center  min-h-screen w-full bg-white relative">
       {/*  Diagonal Cross Grid Bottom Background */}
       <div
         className="absolute inset-0 z-0"
@@ -24,9 +24,9 @@ function App() {
       />
       {/* Your Content/Components */}
 
-      <div>
+      <div className="">
         <Header />
-        <div className="relative z-10">
+        <div className="relative z-10 p-10">
           <Routes>
             <Route path="/" element={<Homepage />}/>
             <Route path="/pastquestions" element={<PQ />}/>
