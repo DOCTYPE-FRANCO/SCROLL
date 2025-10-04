@@ -1,24 +1,43 @@
 import React, {useState, useEffect} from "react";
+import { useLocation } from "react-router-dom";
+import Disconnect from "../assets/plug.svg"
 import axios from "axios";
 function PQ(){
     const [questions, setQuestions] = useState([]);
+    const [disconnect, setDisconnect] = useState(false);
+    const location = useLocation();
+
+    const queryParams = new URLSearchParams(location.search);
+    const searchQuery = queryParams.get("query");
 
     async function getQuestions(){
         try{
-            const response = await axios.get("http://localhost:8080/questions/getall")
+            let response;
+            if(searchQuery){
+                response = await axios.get(`http://localhost:8080/questions/search?keyword=${searchQuery}`)
+            }else{
+                response = await axios.get("http://localhost:8080/questions/getall")
+            }
             setQuestions(response.data);
+            setDisconnect(false);
             console.log(response);
         }catch (error){
+            setDisconnect(true)
             console.log(error);
         }
     }
     useEffect(() => {
         getQuestions();
-    },[])
+    },[searchQuery])
     return(
         <div className="-mt-28">
             <h1 className="font-bold text-4xl text-blue-950 text-center mb-10">PAST QUESTIONS</h1>
-
+            {disconnect && (
+                <div className="flex flex-col justify-center items-center md:mt-32 gap-4">
+                    <img src={Disconnect} className="w-[80px]"/>
+                    <p className="text-blue-950 font-bold text-2xl">Not Connected To Database</p>
+                </div>
+            )}
             <div className="flex flex-col md:flex-row gap-9">
                 {questions.map((question) => (
                     <div 
