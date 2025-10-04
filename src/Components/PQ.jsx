@@ -30,8 +30,9 @@ function PQ(){
         getQuestions();
     },[searchQuery])
     return(
-        <div className="-mt-28">
+        <div className="-mt-7">
             <h1 className="font-bold text-4xl text-blue-950 text-center mb-10">PAST QUESTIONS</h1>
+            <p className="text-black text-2xl mb-5">Search results for '{searchQuery}'</p>
             {disconnect && (
                 <div className="flex flex-col justify-center items-center md:mt-32 gap-4">
                     <img src={Disconnect} className="w-[80px]"/>
@@ -42,7 +43,7 @@ function PQ(){
                 {questions.map((question) => (
                     <div 
                         key={question.id}
-                        className="bg-white w-[300px] h-[170px] border-2 border-gray-500 shadow-2xl"
+                        className="bg-white w-[300px] h-[200px] border-2 border-gray-500 shadow-2xl"
                     >
                         <div className="flex flex-col gap-2 p-2">
                             <p className="text-gray-800 text-2xl font-extrabold">{question.courseCode}</p>
