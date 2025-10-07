@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 function Navbar(){
-
+    const [mobile, setMobile] = useState(false);
     const [nav, setNav] = useState(true);
     return(
         <div className=" ">
@@ -18,8 +18,31 @@ function Navbar(){
             </ul>
 
             <div className="md:hidden w-[70px] h-[40px]">
-                <button className="text-black font-bold text-3xl">☰</button>
+                <button onClick={() => {setMobile(true)}} className="text-black font-bold text-3xl">☰</button>
             </div>
+
+            {mobile && (
+                <div className="fixed top-0 left-16 bg-blue-950 w-[350px] h-[45vh] rounded-2xl flex flex-col items-center transition-all duration-700">
+                    <div className="flex flex-row justify-between mt-4 w-full">
+                        <p className="flex justify-center text-white font-bold text-3xl pl-4">MENU</p>
+                        <button onClick={()=> {setMobile(false)}} className="text-4xl text-white mr-4">X</button>
+                    </div>
+
+                    
+                    <ul className="flex flex-col text-blue-950 gap-10 font-bold  justify-center items-center mt-16">
+                        <li className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[150px]">
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[150px]">
+                            <Link to="/pastquestions">Past Questions</Link>
+                        </li>
+                        <li className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[150px]">
+                            <Link to="/">LOGIN/SIGNUP</Link>
+                        </li>
+                    </ul>
+                    
+                </div>
+            )}
             
         </div>
     );

@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Herosection from "./Herosection";
 import Computer from "../assets/computerB.svg"
 import Cyber from "../assets/cyberB.svg"
 import Economics from "../assets/economicsB.svg"
 function Homepage(){
+    
     return(
         <div className="homepage flex flex-col justify-center items-center pt-16 mb-10 mt-20">
             <Herosection/>
