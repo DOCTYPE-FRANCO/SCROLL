@@ -6,6 +6,8 @@ function PQ(){
     const [questions, setQuestions] = useState([]);
     const [disconnect, setDisconnect] = useState(false);
     const location = useLocation();
+    const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
+
 
     const queryParams = new URLSearchParams(location.search);
     const searchQuery = queryParams.get("query");
@@ -14,9 +16,9 @@ function PQ(){
         try{
             let response;
             if(searchQuery){
-                response = await axios.get(`http://localhost:8080/questions/search?keyword=${searchQuery}`)
+                response = await axios.get(`${BASE_URL}/questions/search?keyword=${searchQuery}`)
             }else{
-                response = await axios.get("http://localhost:8080/questions/getall")
+                response = await axios.get(`${BASE_URL}/questions/getall`)
             }
             setQuestions(response.data);
             setDisconnect(false);
