@@ -31,15 +31,24 @@ function Navbar(){
 
                     
                     <ul className="flex flex-col text-blue-950 gap-4 font-bold  justify-center items-center mt-16">
-                        <li onClick={()=>setMobile(false)} className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li onClick={()=>setMobile(false)} className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
-                            <Link to="/pastquestions">Past Questions</Link>
-                        </li>
-                        <li onClick={()=>setMobile(false)} className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
-                            <Link to="/">LOGIN/SIGNUP</Link>
-                        </li>
+                        <Link to="/">
+                            <li onClick={()=>setMobile(false)} className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
+                                Home
+                            </li>
+                        </Link>
+
+                        <Link to="/pastquestions">
+                            <li onClick={()=>setMobile(false)} className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
+                                Past Questions
+                            </li>
+                        </Link>
+
+                        <Link to="/">
+                            <li onClick={()=>setMobile(false)} className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
+                                LOGIN/SIGNUP
+                            </li>
+                        </Link>
+                        
                     </ul>
                     
                 </div>
