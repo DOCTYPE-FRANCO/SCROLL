@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function Navbar(){
     const [mobile, setMobile] = useState(false);
-    const [nav, setNav] = useState(true);
+    
     return(
-        <div className=" ">
+        <div className="">
             <ul className="hidden md:flex md:flex-row text-blue-950 gap-10 font-bold pr-32">
                 <li className="hover:text-gray-400 active:text-gray-200">
                     <Link to="/">Home</Link>
