@@ -7,12 +7,13 @@ function Herosection(){
     const [searchText, setSearchText] = useState("")
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResult, setShowSearchResult] = useState(false);
+    const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
 
     const navigate = useNavigate();
 
     async function getSearchResult(){
         try{
-            const response = await axios.get(`http://localhost:8080/questions/search?keyword=${searchText}`);
+            const response = await axios.get(`${BASE_URL}/questions/search?keyword=${searchText}`);
             setSearchResults(response.data)
             setShowSearchResult(true)
         } catch(error){
