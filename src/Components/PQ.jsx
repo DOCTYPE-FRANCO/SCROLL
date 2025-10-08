@@ -2,9 +2,11 @@ import React, {useState, useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import Disconnect from "../assets/plug.svg"
 import axios from "axios";
+import { ScaleLoader } from "react-spinners";
 function PQ(){
     const [questions, setQuestions] = useState([]);
     const [disconnect, setDisconnect] = useState(false);
+    const [loading, setLoading] = useState(false);
     const location = useLocation();
     const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
 
@@ -15,6 +17,7 @@ function PQ(){
     async function getQuestions(){
         try{
             let response;
+            setLoading(true);
             if(searchQuery){
                 response = await axios.get(`${BASE_URL}/questions/search?keyword=${searchQuery}`)
             }else{
@@ -22,6 +25,7 @@ function PQ(){
             }
             setQuestions(response.data);
             setDisconnect(false);
+            setLoading(false);
             console.log(response);
         }catch (error){
             setDisconnect(true)
@@ -39,6 +43,12 @@ function PQ(){
                 <div className="flex flex-col justify-center items-center md:mt-32 gap-4">
                     <img src={Disconnect} className="w-[80px]"/>
                     <p className="text-blue-950 font-bold text-2xl">Not Connected To Database</p>
+                </div>
+            )}
+
+            {loading && (
+                <div className="flex justify-center items-center mt-10">
+                    <ScaleLoader height={40} width={8} color="#060848" />
                 </div>
             )}
             <div className="flex flex-col md:flex-row gap-9">
