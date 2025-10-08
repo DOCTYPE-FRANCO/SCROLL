@@ -51,7 +51,7 @@ function PQ(){
                     <ScaleLoader height={40} width={8} color="#060848" />
                 </div>
             )}
-            <div className="flex flex-col md:flex-row gap-9">
+            <div className="flex flex-col justify-center items-center md:flex-row gap-9">
                 {questions.map((question) => (
                     <div 
                         key={question.id}
