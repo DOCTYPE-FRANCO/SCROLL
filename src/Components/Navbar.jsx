@@ -43,7 +43,7 @@ function Navbar(){
                             </li>
                         </Link>
 
-                        <Link to="/">
+                        <Link to="/ls">
                             <li onClick={()=>setMobile(false)} className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
                                 LOGIN/SIGNUP
                             </li>
