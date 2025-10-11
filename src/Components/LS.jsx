@@ -4,7 +4,8 @@ function LS(){
     const [formData, setFormData] = useState({
         MatricNo: "",
         Email: "",
-        Password: ""
+        Password: "",
+        ConfirmPassword: ""
     })
 
     const [hasAccount , setHasAccount] = useState(false);
@@ -17,10 +18,19 @@ function LS(){
         }));
     }
 
+    function handleSubmit(){
+        setFormData({
+            MatricNo: "",
+            Email: "",
+            Password: "",
+            ConfirmPassword: ""
+        })
+    }
+
 
     return(
         <div className="mt-16 flex flex-col justify-center items-center">
-            <div className="bg-white shadow-2xl rounded-xs md:w-[450px] h-[700px] flex flex-col justify-center items-center">
+            <div className="bg-white shadow-2xl rounded-xs md:w-[450px] w-[400px] h-[700px] flex flex-col justify-center items-center">
                 <div className="flex flex-col -mt-32 mb-5">
                     <div className="w-[150px] ">
                         <img src={Logo} />
@@ -58,7 +68,7 @@ function LS(){
                         <input
                             type="text"
                             name="MaricNo"
-                            value={FormData.MatricNo}
+                            value={FormData.Password}
                             className="md:w-[300px] h-[40px] border font-bold pl-4"
                             onChange={handleChange}
                         />
@@ -70,7 +80,7 @@ function LS(){
                             <input
                                 type="text"
                                 name="MaricNo"
-                                value={FormData.MatricNo}
+                                value={FormData.ConfirmPassword}
                                 className="md:w-[300px] h-[40px] border font-bold pl-4"
                                 onChange={handleChange}
                             />
