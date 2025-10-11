@@ -37,7 +37,7 @@ function LS(){
                             type="text"
                             name="MaricNo"
                             value={FormData.MatricNo}
-                            className="md:w-[300px] h-[40px] border font-bold"
+                            className="md:w-[300px] h-[40px] border font-bold pl-4"
                             onChange={handleChange}
                         />
                     </div>
@@ -48,7 +48,7 @@ function LS(){
                             type="text"
                             name="MaricNo"
                             value={FormData.Email}
-                            className="md:w-[300px] h-[40px] border font-bold"
+                            className="md:w-[300px] h-[40px] border font-bold pl-4"
                             onChange={handleChange}
                         />
                     </div>
@@ -59,7 +59,7 @@ function LS(){
                             type="text"
                             name="MaricNo"
                             value={FormData.MatricNo}
-                            className="md:w-[300px] h-[40px] border font-bold"
+                            className="md:w-[300px] h-[40px] border font-bold pl-4"
                             onChange={handleChange}
                         />
                     </div>
@@ -71,7 +71,7 @@ function LS(){
                                 type="text"
                                 name="MaricNo"
                                 value={FormData.MatricNo}
-                                className="md:w-[300px] h-[40px] border font-bold"
+                                className="md:w-[300px] h-[40px] border font-bold pl-4"
                                 onChange={handleChange}
                             />
                         </div>
@@ -80,7 +80,7 @@ function LS(){
                     }
 
                     <div className="flex flex-col gap-2 items-center justify-center mt-10">
-                        <p onClick={()=> setHasAccount(!hasAccount)} className="hover:text-purple-950">{hasAccount ? "Don't Have an Account, Sign Up" : "Already Have an Account, Sign In"}</p>
+                        <p onClick={()=> setHasAccount(!hasAccount)} className="font-bold text-blue-950 hover:text-purple-950 hover:cursor-pointer">{hasAccount ? "Don't Have an Account, Sign Up" : "Already Have an Account, Sign In"}</p>
                         <button className="text-white font-bold w-[300px] h-[30px] bg-blue-950 rounded-xs mt-6 hover:bg-gray-600 active:bg-gray-800">{hasAccount ? "LOGIN" : "SIGNUP"}</button>
                     </div>
                 </form>
