@@ -11,7 +11,10 @@ function LS(){
 
     function handleChange(event){
         const {name, value} = event.target;
-        setFormData(prevData)
+        setFormData(prevData => ({
+            ...prevData, 
+            [name]: value
+        }));
     }
 
 
@@ -35,6 +38,7 @@ function LS(){
                             name="MaricNo"
                             value={FormData.MatricNo}
                             className="md:w-[300px] h-[40px] border font-bold"
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -45,6 +49,7 @@ function LS(){
                             name="MaricNo"
                             value={FormData.Email}
                             className="md:w-[300px] h-[40px] border font-bold"
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -55,6 +60,7 @@ function LS(){
                             name="MaricNo"
                             value={FormData.MatricNo}
                             className="md:w-[300px] h-[40px] border font-bold"
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -66,6 +72,7 @@ function LS(){
                                 name="MaricNo"
                                 value={FormData.MatricNo}
                                 className="md:w-[300px] h-[40px] border font-bold"
+                                onChange={handleChange}
                             />
                         </div>
                         :
