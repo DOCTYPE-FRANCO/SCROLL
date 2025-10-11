@@ -24,6 +24,7 @@ function LS(){
         e.preventDefault();
         if(formData.Password  !== formData.ConfirmPassword){
             alert("PASSWORDS DON'T MATCH");
+            return;
         }
         try{
             const response = await axios.post("//not set yet", {
