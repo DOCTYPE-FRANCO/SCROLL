@@ -2,7 +2,8 @@ import React from "react"
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header"
 import Homepage from "./Components/Homepage";
-import PQ from "./Components/PQ"
+import PQ from "./Components/PQ";
+import LS from "./Components/LS"
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Homepage />}/>
             <Route path="/pastquestions" element={<PQ />}/>
+            <Route path="/ls" element={<LS />}/>
           </Routes>
         </div>
       </div>

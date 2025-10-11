@@ -14,7 +14,7 @@ function Navbar(){
                     <Link to="/pastquestions">Past Questions</Link>
                 </li>
                 <li className="hover:text-gray-400 active:text-gray-200">
-                    <Link to="#">LOGIN/SIGNUP</Link>
+                    <Link to="/ls">LOGIN/SIGNUP</Link>
                 </li>
             </ul>
 
