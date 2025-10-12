@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
+import { UserDataContext } from "../UserContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Search from "../assets/search.svg"
@@ -8,6 +9,7 @@ function Herosection(){
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResult, setShowSearchResult] = useState(false);
     const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
+    const {logged} = useContext(UserDataContext);
 
     const navigate = useNavigate();
 
@@ -36,10 +38,14 @@ function Herosection(){
 
     function handleSearch(e){
         e.preventDefault();
-        if(searchText.trim() !== ""){
-            navigate(`/pastquestions?query=${searchText}`);
+        if(logged){
+            if(searchText.trim() !== ""){
+                navigate(`/pastquestions?query=${searchText}`);
+            }else{
+                navigate('/pastquestions');
+            }
         }else{
-            navigate('/pastquestions');
+            alert("PLEASE LOGIN SKI :)");
         }
     }
 

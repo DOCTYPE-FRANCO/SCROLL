@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import Logo from "../assets/LOGO.jpg"
 import { useNavigate } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import axios from "axios";
+import { UserDataContext } from "../UserContext";
 function LS(){
+    const {matric, setMatric, logged, setLogged} = useContext(UserDataContext);
     const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -15,7 +17,7 @@ function LS(){
     })
 
     const [hasAccount , setHasAccount] = useState(false);
-    const [logged, setLogged] = useState(false);
+    
 
     function handleChange(event){
         const {name, value} = event.target;
@@ -65,9 +67,11 @@ function LS(){
 
             if(response.status === 200){
                 const token = response.data.token;
+                const MatricNo = response.data.MatricNumber;
                 setLogged(true);
                 navigate("/");
                 localStorage.setItem("jwt", token);
+                setMatric(MatricNo);
             }
 
         }catch(error) {

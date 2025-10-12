@@ -29,6 +29,7 @@ function PQ(){
             console.log(response);
         }catch (error){
             setDisconnect(true)
+            setLoading(false);
             console.log(error);
         }
     }

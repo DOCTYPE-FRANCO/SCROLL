@@ -13,7 +13,7 @@ function Header (){
             <Navbar />
 
             <div className="hidden md:block">
-                {matric === "" ? "" :`HELLO, ${matric}`}
+                {matric === "" ? "" :<p className="font-bold text-blue-950 pr-6 cursor-pointer">HELLO, {matric}</p>}
             </div>
         </div>
     );

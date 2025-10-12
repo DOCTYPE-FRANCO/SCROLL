@@ -1,12 +1,14 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Link } from "react-router-dom";
+import { UserDataContext } from "../UserContext";
 
 function Navbar(){
     const [mobile, setMobile] = useState(false);
+    const {logged} = useContext(UserDataContext);
     
     return(
         <div className="">
-            <ul className="hidden md:flex md:flex-row text-blue-950 gap-10 font-bold pr-32">
+            <ul className="hidden md:flex md:flex-row text-blue-950 gap-10 font-bold ">
                 <li className="hover:text-gray-400 active:text-gray-200">
                     <Link to="/">Home</Link>
                 </li>
