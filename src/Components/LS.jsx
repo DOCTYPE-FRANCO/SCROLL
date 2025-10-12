@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import Logo from "../assets/LOGO.jpg"
 import { useNavigate } from "react-router-dom";
+import { BeatLoader } from "react-spinners";
 import axios from "axios";
 function LS(){
     const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         MatricNo: "",
@@ -25,6 +27,7 @@ function LS(){
 
     async function handleSignup(e){
         e.preventDefault();
+        setLoading(true);
         if(formData.Password  !== formData.ConfirmPassword){
             alert("PASSWORDS DON'T MATCH");
             return;
@@ -44,11 +47,13 @@ function LS(){
         }catch(error) {
             console.log(error);
         }
+        setLoading(false);
         
     }
 
     async function handleLogin(e){
         e.preventDefault();
+        setLoading(true);
         
         try{
             const response = await axios.post(`${BASE_URL}/api/login`, {
@@ -68,6 +73,7 @@ function LS(){
         }catch(error) {
             console.log(error);
         }
+        setLoading(false);
         setFormData({
             MatricNo: "",
             Email: "",
@@ -100,16 +106,22 @@ function LS(){
                         />
                     </div>
 
-                    <div className="flex flex-col gap-3">
-                        <label className="font-bold text-blue-950">EMAIL:</label>
-                        <input
-                            type="text"
-                            name="Email"
-                            value={formData.Email}
-                            className="md:w-[300px] h-[40px] border font-bold pl-4"
-                            onChange={handleChange}
-                        />
-                    </div>
+                    
+
+                    {!hasAccount ? 
+                        <div className="flex flex-col gap-3">
+                            <label className="font-bold text-blue-950">EMAIL:</label>
+                            <input
+                                type="text"
+                                name="Email"
+                                value={formData.Email}
+                                className="md:w-[300px] h-[40px] border font-bold pl-4"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        :
+                        <p></p>
+                    }
 
                     <div className="flex flex-col gap-3">
                         <label className="font-bold text-blue-950">PASSWORD:</label>
@@ -121,6 +133,8 @@ function LS(){
                             onChange={handleChange}
                         />
                     </div>
+
+                    
 
                     {!hasAccount ? 
                         <div className="flex flex-col gap-3">
@@ -142,6 +156,16 @@ function LS(){
                         <button type="submit" className="text-white font-bold w-[300px] h-[30px] bg-blue-950 rounded-xs mt-6 hover:bg-gray-600 active:bg-gray-800">{hasAccount ? "LOGIN" : "SIGNUP"}</button>
                     </div>
                 </form>
+
+                {loading && (
+                    <div className="fixed inset-0 flex items-center justify-center bg-opacity-20 backdrop-blur-sm z-50">
+                        <div className="flex flex-col items-center space-y-4">
+                        <BeatLoader  />
+                        <p className="text-blue-950 text-sm font-bold">{hasAccount? "Logging in, Please Chill... :)": "Signing You Up, in a bit.. :)"}</p>
+                        </div>
+                    </div>
+                )}
+
             </div>
         </div>
     );
