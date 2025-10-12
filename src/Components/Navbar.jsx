@@ -22,9 +22,11 @@ function Navbar(){
                 <li onClick={handleLogged} className="hover:text-gray-400 active:text-gray-200">
                     <Link to={logged ? "/pastquestions" : ""}>Past Questions</Link>
                 </li>
-                <li className="hover:text-gray-400 active:text-gray-200">
-                    <Link to="/ls">LOGIN/SIGNUP</Link>
-                </li>
+                {!logged && (
+                    <li className="hover:text-gray-400 active:text-gray-200">
+                        <Link to="/ls">LOGIN/SIGNUP</Link>
+                    </li>
+                )}
             </ul>
 
             <div className="md:hidden w-[70px] h-[40px]">
