@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
+import { UserDataContext } from "../UserContext";
 import { useLocation } from "react-router-dom";
 import Disconnect from "../assets/plug.svg"
 import axios from "axios";
 import { ScaleLoader } from "react-spinners";
 function PQ(){
+    const {token} = useContext(UserDataContext);
     const [questions, setQuestions] = useState([]);
     const [disconnect, setDisconnect] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -18,10 +20,21 @@ function PQ(){
         try{
             let response;
             setLoading(true);
+            console.log(token);
             if(searchQuery){
-                response = await axios.get(`${BASE_URL}/questions/search?keyword=${searchQuery}`)
+                response = await axios.get(`${BASE_URL}/questions/search?keyword=${searchQuery}`,{
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+                
             }else{
-                response = await axios.get(`${BASE_URL}/questions/getall`)
+                response = await axios.get(`${BASE_URL}/questions/getall`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+                
             }
             setQuestions(response.data);
             setDisconnect(false);

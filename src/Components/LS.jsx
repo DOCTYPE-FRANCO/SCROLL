@@ -5,7 +5,7 @@ import { BeatLoader } from "react-spinners";
 import axios from "axios";
 import { UserDataContext } from "../UserContext";
 function LS(){
-    const {matric, setMatric, logged, setLogged} = useContext(UserDataContext);
+    const {matric, setMatric, logged, setLogged, token, setToken} = useContext(UserDataContext);
     const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -69,13 +69,15 @@ function LS(){
                 const token = response.data.token;
                 const MatricNo = response.data.MatricNumber;
                 setLogged(true);
-                navigate("/");
-                localStorage.setItem("jwt", token);
+                setToken(token);
                 setMatric(MatricNo);
+                navigate("/");
+                
             }
 
         }catch(error) {
             console.log(error);
+            alert("Something went wrong. Try again later");
         }
         setLoading(false);
         setFormData({

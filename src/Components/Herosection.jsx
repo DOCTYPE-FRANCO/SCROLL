@@ -5,6 +5,7 @@ import axios from "axios";
 import Search from "../assets/search.svg"
 
 function Herosection(){
+    const {token} = useContext(UserDataContext);
     const [searchText, setSearchText] = useState("")
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResult, setShowSearchResult] = useState(false);
@@ -15,7 +16,11 @@ function Herosection(){
 
     async function getSearchResult(){
         try{
-            const response = await axios.get(`${BASE_URL}/questions/search?keyword=${searchText}`);
+            const response = await axios.get(`${BASE_URL}/questions/search?keyword=${searchText}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
             setSearchResults(response.data)
             setShowSearchResult(true)
         } catch(error){
