@@ -5,6 +5,13 @@ import { UserDataContext } from "../UserContext";
 function Navbar(){
     const [mobile, setMobile] = useState(false);
     const {logged} = useContext(UserDataContext);
+
+    function handleLogged(){
+        if(!logged){
+            alert("PLEASE LOGIN SKI :)")
+        }
+        return;
+    }
     
     return(
         <div className="">
@@ -12,8 +19,8 @@ function Navbar(){
                 <li className="hover:text-gray-400 active:text-gray-200">
                     <Link to="/">Home</Link>
                 </li>
-                <li className="hover:text-gray-400 active:text-gray-200">
-                    <Link to="/pastquestions">Past Questions</Link>
+                <li onClick={handleLogged} className="hover:text-gray-400 active:text-gray-200">
+                    <Link to={logged ? "/pastquestions" : ""}>Past Questions</Link>
                 </li>
                 <li className="hover:text-gray-400 active:text-gray-200">
                     <Link to="/ls">LOGIN/SIGNUP</Link>
@@ -39,8 +46,16 @@ function Navbar(){
                             </li>
                         </Link>
 
-                        <Link to="/pastquestions">
-                            <li onClick={()=>setMobile(false)} className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
+                        <Link to={logged ? "/pastquestions": ""}>
+                            <li onClick={()=> {
+                                if (!logged) {
+                                    alert("PLEASE LOGIN SKI :)");
+                                    } else {
+                                    setMobile(false);
+                                
+                                    }
+                                }}
+                             className="text-white active:text-gray-600 text-center border-2 border-gray-300 w-[250px] font-bold">
                                 Past Questions
                             </li>
                         </Link>
