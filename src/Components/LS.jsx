@@ -1,7 +1,10 @@
 import React, {useState} from "react";
 import Logo from "../assets/LOGO.jpg"
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 function LS(){
+    const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         MatricNo: "",
         Email: "",
@@ -27,13 +30,13 @@ function LS(){
             return;
         }
         try{
-            const response = await axios.post("//not set yet", {
-                MatricNo: formData.MatricNo,
-                Email : formData.Email,
-                Password: formData.Password
+            const response = await axios.post(`${BASE_URL}/api/signup`, {
+                matricNumber: formData.MatricNo,
+                email : formData.Email,
+                password: formData.Password
             });
 
-            if(response.data === 'DATA RECEIVED, TRY LOGGING IN'){
+            if(response.status === 200){
                 setHasAccount(true)
             }else{
                 alert("Somthing Went Wrong, Try again later")
@@ -41,25 +44,25 @@ function LS(){
         }catch(error) {
             console.log(error);
         }
-        setFormData({
-            MatricNo: "",
-            Email: "",
-            Password: "",
-            ConfirmPassword: ""
-        })
+        
     }
 
     async function handleLogin(e){
         e.preventDefault();
         
         try{
-            const response = await axios.post("//not set yet", {
-                MatricNo: formData.MatricNo,
-                Password: formData.Password
+            const response = await axios.post(`${BASE_URL}/api/login`, {
+                matricNumber: formData.MatricNo,
+                password: formData.Password
             });
+            console.log(response);
+            
 
             if(response.status === 200){
+                const token = response.data.token;
                 setLogged(true);
+                navigate("/");
+                localStorage.setItem("jwt", token);
             }
 
         }catch(error) {

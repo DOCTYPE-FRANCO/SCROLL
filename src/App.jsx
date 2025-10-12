@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header"
 import Homepage from "./Components/Homepage";
 import PQ from "./Components/PQ";
-import LS from "./Components/LS"
+import LS from "./Components/LS";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
       />
       {/* Your Content/Components */}
 
-      <div className="">
+      <div className="z-10">
         <Header />
         <div className="relative z-10 p-10">
           <Routes>
@@ -34,6 +35,7 @@ function App() {
             <Route path="/ls" element={<LS />}/>
           </Routes>
         </div>
+        <Footer />
       </div>
     </div>
   );
