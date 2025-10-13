@@ -45,7 +45,7 @@ function Navbar(){
                     <div className="flex flex-row">
                         <ul className="flex flex-col justify-start text-blue-950 gap-4 font-bold pl-10  mt-16">
                             <Link to="/">
-                                <li onClick={()=>setMobile(false)} className="flex flex-row justify-start gap-12 items-center text-white active:text-gray-600 text-center w-[150px] font-bold">
+                                <li onClick={()=>setMobile(false)} className="flex flex-row justify-start gap-12 items-center text-white active:text-gray-600 text-center w-[150px] font-thin">
                                     <Home color="#FFFFFF" />
                                     Home
                                 </li>
@@ -60,22 +60,22 @@ function Navbar(){
                                     
                                         }
                                     }}
-                                    className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center w-[350px] font-bold">
+                                    className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center w-[350px] font-thin">
                                     <Book color="#FFFFFF"/>
                                     Past Questions
                                 </li>
                             </Link>
 
                             <Link to="/ls">
-                                <li onClick={()=>setMobile(false)} className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center  w-[150px] font-bold">
+                                <li onClick={()=>setMobile(false)} className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center  w-[150px] font-thin">
                                     <Lock color="#FFFFFF" />
                                     LOGIN
                                 </li>
                             </Link>
                             
                         </ul>
-                        <div className="flex justify-center items-center">
-                            <SmileIcon color="#FFFFFF" className="-ml-20" size={64}/>
+                        <div className="flex justify-center items-center font-light">
+                            <SmileIcon color="#FFFFFF" className="-ml-20" size={64} strokeWidth={1}/>
                         </div>
                     </div>
                     
