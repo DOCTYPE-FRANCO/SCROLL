@@ -5,12 +5,12 @@ import axios from "axios";
 import Search from "../assets/search.svg"
 
 function Herosection(){
-    const {token} = useContext(UserDataContext);
+    const {token, logged} = useContext(UserDataContext);
     const [searchText, setSearchText] = useState("")
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResult, setShowSearchResult] = useState(false);
     const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
-    const {logged} = useContext(UserDataContext);
+    
 
     const navigate = useNavigate();
 
@@ -21,8 +21,8 @@ function Herosection(){
                     Authorization: `Bearer ${token}`
                 }
             });
-            setSearchResults(response.data)
-            setShowSearchResult(true)
+            setSearchResults(response.data);
+            setShowSearchResult(true);
         } catch(error){
             console.log(error);
         }
@@ -43,7 +43,7 @@ function Herosection(){
 
     function handleSearch(e){
         e.preventDefault();
-        if(logged){
+        if(logged || token){
             if(searchText.trim() !== ""){
                 navigate(`/pastquestions?query=${searchText}`);
             }else{
