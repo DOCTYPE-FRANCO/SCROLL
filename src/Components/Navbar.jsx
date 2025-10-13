@@ -37,7 +37,7 @@ function Navbar(){
             {mobile && (
                 <div className="fixed top-0 left-0 bg-gray-800/95 backdrop-blur-sm w-full h-[30vh] flex flex-col transition-all duration-700">
                     <div className="flex flex-row justify-between mt-4 w-full">
-                        <p className="flex justify-center text-white font-thin text-2xl pl-4">MENU</p>
+                        <p className="flex justify-center text-white font-thin text-2xl pl-10">MENU</p>
                         <button onClick={()=> {setMobile(false)}} className="text-4xl text-white mr-4"><XIcon color="#FFFFFF"/></button>
                     </div>
 
