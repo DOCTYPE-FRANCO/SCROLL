@@ -45,8 +45,8 @@ function Navbar(){
                     <div className="flex flex-row">
                         <ul className="flex flex-col justify-start text-blue-950 gap-4 font-bold pl-10  mt-16">
                             <Link to="/">
-                                <li onClick={()=>setMobile(false)} className="flex flex-row justify-start gap-12 items-center text-white active:text-gray-600 text-center w-[150px] font-thin">
-                                    <Home color="#FFFFFF" />
+                                <li onClick={()=>setMobile(false)} className="flex flex-row justify-start gap-12 items-center text-white active:text-gray-600 text-center w-[150px] font-semibold">
+                                    <Home color="#FFFFFF" strokeWidth={1}/>
                                     Home
                                 </li>
                             </Link>
@@ -60,15 +60,15 @@ function Navbar(){
                                     
                                         }
                                     }}
-                                    className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center w-[350px] font-thin">
-                                    <Book color="#FFFFFF"/>
+                                    className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center w-[350px] font-semibold">
+                                    <Book color="#FFFFFF" strokeWidth={1}/>
                                     Past Questions
                                 </li>
                             </Link>
 
                             <Link to="/ls">
-                                <li onClick={()=>setMobile(false)} className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center  w-[150px] font-thin">
-                                    <Lock color="#FFFFFF" />
+                                <li onClick={()=>setMobile(false)} className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center  w-[150px] font-semibold">
+                                    <Lock color="#FFFFFF" strokeWidth={1} />
                                     LOGIN
                                 </li>
                             </Link>
