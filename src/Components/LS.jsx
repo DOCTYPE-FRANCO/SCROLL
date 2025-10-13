@@ -18,7 +18,7 @@ function LS(){
     })
 
     const [hasAccount , setHasAccount] = useState(false);
-    const [warning, setWarning] = useState(true);
+    const [warning, setWarning] = useState(false);
     
 
     function handleChange(event){
@@ -43,6 +43,12 @@ function LS(){
             setLoading(false);
             return;
         }
+
+        if(formData.Password.length < 8){
+            setWarning(true);
+            setLoading(false);
+            return;
+        }
         try{
             const response = await axios.post(`${BASE_URL}/api/signup`, {
                 matricNumber: formData.MatricNo,
@@ -55,10 +61,12 @@ function LS(){
             }else{
                 alert("Somthing Went Wrong, Try again later")
             }
+            
         }catch(error) {
             console.log(error);
         }
         setLoading(false);
+        setWarning(false);
         
     }
 
@@ -147,6 +155,9 @@ function LS(){
                             className="md:w-[300px] h-[40px] border font-bold pl-4"
                             onChange={handleChange}
                         />
+                        {warning && (
+                            <p className="text-red-600 font-thin">Minimum of 8 Characters</p>
+                        )}
                     </div>
 
                     
@@ -161,6 +172,9 @@ function LS(){
                                 className="md:w-[300px] h-[40px] border font-bold pl-4"
                                 onChange={handleChange}
                             />
+                            {warning && (
+                                <p className="text-red-600 font-thin">Minimum of 8 Characters</p>
+                            )}
                         </div>
                         :
                         <p></p>
