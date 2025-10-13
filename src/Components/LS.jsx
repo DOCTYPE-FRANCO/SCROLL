@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import axios from "axios";
 import { UserDataContext } from "../UserContext";
+import { TrainTrack } from "lucide-react";
 function LS(){
     const {matric, setMatric, logged, setLogged, token, setToken} = useContext(UserDataContext);
     const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
@@ -17,6 +18,7 @@ function LS(){
     })
 
     const [hasAccount , setHasAccount] = useState(false);
+    const [warning, setWarning] = useState(true);
     
 
     function handleChange(event){
@@ -32,6 +34,13 @@ function LS(){
         setLoading(true);
         if(formData.Password  !== formData.ConfirmPassword){
             alert("PASSWORDS DON'T MATCH");
+            setLoading(false);
+            return;
+        }
+
+        if(!(formData.MatricNo.startsWith("A")) && formData.MatricNo.length < 8){
+            alert("PLEASE ENTER A VALID MATRIC NUMBER");
+            setLoading(false);
             return;
         }
         try{
@@ -118,7 +127,7 @@ function LS(){
                         <div className="flex flex-col gap-3">
                             <label className="font-bold text-blue-950">EMAIL:</label>
                             <input
-                                type="text"
+                                type="email"
                                 name="Email"
                                 value={formData.Email}
                                 className="md:w-[300px] h-[40px] border font-bold pl-4"

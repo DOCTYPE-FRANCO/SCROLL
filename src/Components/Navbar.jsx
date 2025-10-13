@@ -25,7 +25,7 @@ function Navbar(){
                 </li>
                 {!logged && (
                     <li className="hover:text-gray-400 active:text-gray-200">
-                        <Link to="/ls">LOGIN/SIGNUP</Link>
+                        <Link to="/ls">LOGIN</Link>
                     </li>
                 )}
             </ul>
@@ -45,7 +45,7 @@ function Navbar(){
                     <div className="flex flex-row">
                         <ul className="flex flex-col justify-start text-blue-950 gap-4 font-bold pl-10  mt-16">
                             <Link to="/">
-                                <li onClick={()=>setMobile(false)} className="flex flex-row justify-start gap-12 items-center text-white active:text-gray-600 text-center w-[150px] font-semibold">
+                                <li onClick={()=>setMobile(false)} className="flex flex-row justify-start gap-10 items-center text-white active:text-gray-600 text-center w-[150px] font-semibold">
                                     <Home color="#FFFFFF" strokeWidth={1}/>
                                     Home
                                 </li>
