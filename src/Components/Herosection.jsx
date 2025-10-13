@@ -5,8 +5,7 @@ import axios from "axios";
 import Search from "../assets/search.svg"
 
 function Herosection(){
-    const {token, logged} = useContext(UserDataContext);
-    const [searchText, setSearchText] = useState("")
+    const {token, logged, searchText, setSearchText} = useContext(UserDataContext);
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResult, setShowSearchResult] = useState(false);
     const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
