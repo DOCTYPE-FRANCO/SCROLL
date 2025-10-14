@@ -38,7 +38,7 @@ function LS(){
             return;
         }
 
-        if(!(formData.MatricNo.startsWith("A")) && formData.MatricNo.length < 8){
+        if(!(formData.MatricNo.startsWith("AU20")) || formData.MatricNo.length < 8){
             alert("PLEASE ENTER A VALID MATRIC NUMBER");
             setLoading(false);
             return;
