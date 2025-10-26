@@ -57,7 +57,7 @@ function Herosection(){
         setSearchText(e.target.value);
     }
     return(
-        <div className="flex flex-col justify-center items-center mb-10">
+        <div className="flex flex-col justify-center items-center mb-10" id="Hero">
             <h1 className="flex justify-center items-center text-blue-950 font-bold text-center text-4xl md:text-5xl mb-6 md:max-w-[600px] max-w-[400px]">Search for Past Questions</h1>
 
             <div className="flex justify-center items-center mb-5 gap-2" >

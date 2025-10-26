@@ -16,23 +16,25 @@ function Homepage(){
             <div className="mt-20 md:pl-10 flex flex-col justify-center items-center">
                 <h2 className="flex text-3xl text-blue-950 font-bold mb-8">Quick Links</h2>
 
-                <div className="flex flex-col md:flex-row gap-3">
-                    <div onClick={() => setSearchText("SEN")} className="flex flex-col justify-center items-center font-extrabold text-2xl border-2 border-blue-950 text-blue-950 w-[300px] h-[150px] rounded-xs hover:bg-blue-950 hover:text-white transition-all duration-500 active:bg-gray-600">
-                        <img src={Computer} className="w-[60px]"/>
-                        Software Engineering
-                    </div>
+                <a href="#Hero">
+                    <div className="flex flex-col md:flex-row gap-3">
+                        <div onClick={() => setSearchText("SEN")} className="flex flex-col justify-center items-center font-extrabold text-2xl border-2 border-blue-950 text-blue-950 w-[300px] h-[150px] rounded-xs hover:bg-blue-950 hover:text-white transition-all duration-500 active:bg-gray-600">
+                            <img src={Computer} className="w-[60px]"/>
+                            Software Engineering
+                        </div>
 
-                    -<div onClick={() => setSearchText("ECO")} className="flex flex-col justify-center items-center font-extrabold text-2xl border-2 border-blue-950 text-blue-950 w-[300px] h-[150px] rounded-xs hover:bg-blue-950 hover:text-white transition-all duration-500 active:bg-gray-600">
-                        <img src={Economics} className="w-[60px]"/>
-                        Economics
-                    </div>
+                        <div onClick={() => setSearchText("ECO")} className="flex flex-col justify-center items-center font-extrabold text-2xl border-2 border-blue-950 text-blue-950 w-[300px] h-[150px] rounded-xs hover:bg-blue-950 hover:text-white transition-all duration-500 active:bg-gray-600">
+                            <img src={Economics} className="w-[60px]"/>
+                            Economics
+                        </div>
 
-                    <div onClick={() => setSearchText("CYB")} className="flex flex-col justify-center items-center font-extrabold text-2xl border-2 border-blue-950 text-blue-950 w-[300px] h-[150px] rounded-xs hover:bg-blue-950 hover:text-white transition-all duration-500 active:bg-gray-600">
-                        <img src={Cyber} className="w-[60px]"/>
-                        CyberSecurity
-                    </div>
+                        <div onClick={() => setSearchText("CYB")} className="flex flex-col justify-center items-center font-extrabold text-2xl border-2 border-blue-950 text-blue-950 w-[300px] h-[150px] rounded-xs hover:bg-blue-950 hover:text-white transition-all duration-500 active:bg-gray-600">
+                            <img src={Cyber} className="w-[60px]"/>
+                            CyberSecurity
+                        </div>
 
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     );
