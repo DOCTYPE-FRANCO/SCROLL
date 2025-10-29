@@ -74,9 +74,7 @@ function Navbar(){
                             </Link>
                             
                         </ul>
-                        <div className="flex justify-center items-center font-light">
-                            <SmileIcon color="#FFFFFF" className="-ml-20" size={64} strokeWidth={1}/>
-                        </div>
+                        
                     </div>
                     
                 </div>
