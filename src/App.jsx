@@ -5,6 +5,7 @@ import Homepage from "./Components/Homepage";
 import PQ from "./Components/PQ";
 import LS from "./Components/LS";
 import Footer from "./Components/Footer";
+import Maintenance from "./Components/Maintenance";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         }}
       />
       {/* Your Content/Components */}
-
+      <Maintenance />
       <div className="z-10">
         <Header />
         <div className="relative z-10 p-10">
