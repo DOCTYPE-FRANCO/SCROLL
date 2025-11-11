@@ -7,7 +7,7 @@ function Maintenance() {
                 SCROLL IS CURRENTLY UNDER MAINTENANCE :(
             </p>
 
-            <p className="font-extrabold ">
+            <p className="font-extrabold text-blue-950">
                 BEG FRANCO TO FIX ;)
             </p>
         </div>
