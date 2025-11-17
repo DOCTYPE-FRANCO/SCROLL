@@ -26,7 +26,7 @@ function App() {
         }}
       />
       {/* Your Content/Components */}
-      <Maintenance />
+      
       <div className="z-10">
         <Header />
         <div className="relative z-10 p-10">
