@@ -25,7 +25,7 @@ function App() {
                 "radial-gradient(ellipse 100% 80% at 50% 100%, #000 50%, transparent 90%)",
         }}
       />
-      
+      <Maintenance />
       {/* Your Content/Components */}
       
       <div className="z-10">
