@@ -7,12 +7,7 @@ function Navbar(){
     const [mobile, setMobile] = useState(false);
     const {logged} = useContext(UserDataContext);
 
-    function handleLogged(){
-        if(!logged){
-            alert("PLEASE LOGIN SKI :)")
-        }
-        return;
-    }
+
     
     return(
         <div className="">
@@ -20,8 +15,8 @@ function Navbar(){
                 <li className="hover:text-gray-400 active:text-gray-200">
                     <Link to="/">Home</Link>
                 </li>
-                <li onClick={handleLogged} className="hover:text-gray-400 active:text-gray-200">
-                    <Link to={logged ? "/pastquestions" : ""}>Past Questions</Link>
+                <li className="hover:text-gray-400 active:text-gray-200">
+                    <Link to="/pastquestions" >Past Questions</Link>
                 </li>
                 {!logged && (
                     <li className="hover:text-gray-400 active:text-gray-200">
