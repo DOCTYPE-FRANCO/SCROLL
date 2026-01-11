@@ -184,14 +184,15 @@ function PQ(){
 
     
     return(
-        <div className="-mt-7">
+        <div className="-mt-7" onClick={() => setLoading(false)}>
             <h1 className="font-bold text-4xl text-blue-950 text-center mb-10">PAST QUESTIONS</h1>
             <p className="text-black text-2xl mb-5">Search results for '{searchQuery}'</p>
             
 
             {loading && (
-                <div className="flex justify-center items-center mt-10">
+                <div className="fixed gap-4 inset-0 flex flex-col items-center justify-center bg-opacity-10 backdrop-blur-sm z-50">
                     <ScaleLoader height={40} width={8} color="#060848" />
+                    <h1 className="text-blue-950 font-bold text-2xl">LOADING...</h1>
                 </div>
             )}
             <div className="grid md:grid-cols-3 justify-center items-center grid-cols-1 gap-9">
@@ -206,9 +207,10 @@ function PQ(){
                             <p className="text-gray-400  font-bold">{question.year}</p>
                         </div>
 
-                        <div className="flex justify-end pr-2">
+                        <div className="flex justify-end pr-2" onClick={() => setLoading(true)}>
                             <a 
-                                href={question.imageURL}
+                                href={question.image}
+                                
                                 className="px-4 py-2 rounded-2xl bg-gray-800 text-white font-bold hover:bg-gray-600 hover:text-black transition-colors duration-300 cursor-pointer"
                             >
                                 View
