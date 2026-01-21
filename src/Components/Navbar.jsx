@@ -48,12 +48,13 @@ function Navbar(){
 
                             <Link to={logged ? "/pastquestions": ""}>
                                 <li onClick={()=> {
-                                    if (!logged) {
+                                    /*if (!logged) {
                                         alert("PLEASE LOGIN SKI :)");
                                         } else {
                                         setMobile(false);
                                     
-                                        }
+                                        }*/
+                                       setMobile(false);
                                     }}
                                     className="flex flex-row gap-10 justify-start items-center text-white active:text-gray-600 text-center w-[350px] font-semibold">
                                     <Book color="#FFFFFF" strokeWidth={1}/>
