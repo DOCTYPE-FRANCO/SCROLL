@@ -46,7 +46,7 @@ function Navbar(){
                                 </li>
                             </Link>
 
-                            <Link to={logged ? "/pastquestions": ""}>
+                            <Link to={logged ? "/pastquestions": "/pastquestions"}>
                                 <li onClick={()=> {
                                     /*if (!logged) {
                                         alert("PLEASE LOGIN SKI :)");

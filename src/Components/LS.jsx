@@ -7,7 +7,7 @@ import { UserDataContext } from "../UserContext";
 import { TrainTrack } from "lucide-react";
 function LS(){
     const {matric, setMatric, logged, setLogged, token, setToken} = useContext(UserDataContext);
-    const BASE_URL = "https://backendforscroll-bitter-moon-1124.fly.dev";
+    const BASE_URL = "https://localhost:8080";
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
