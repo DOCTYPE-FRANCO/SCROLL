@@ -63,7 +63,7 @@ function PQ() {
             )}
 
             {disconnect && (
-                <div className="flex flex-col justify-center items-center md:mt-32 gap-4">
+                <div className="fixed inset-0 flex flex-col justify-center items-center md:mt-32 gap-4 bg-black/10 backdrop-blur-sm z-50">
                     <img src={Disconnect} className="w-[100px] h-[100px]" />
                     <p className="text-blue-950 font-bold  text-2xl text-center">Unable To Connect To Database</p>
                 </div>
